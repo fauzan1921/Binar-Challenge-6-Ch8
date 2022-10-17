@@ -1,0 +1,440 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Challenge Ch8 Fauzan Aslam Player API",
+      "version": "1"
+    },
+    "servers": [
+      {
+        "url": "http://localhost5000"
+      }
+    ],
+    "paths": {
+      "/players": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Get player data success",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 5
+                        },
+                        "username": {
+                          "type": "string",
+                          "example": "jimbo"
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "jimbo@jimbo.com"
+                        },
+                        "password": {
+                          "type": "string",
+                          "example": "jimbo123"
+                        },
+                        "experience": {
+                          "type": "integer",
+                          "example": 10
+                        },
+                        "lvl": {
+                          "type": "integer",
+                          "example": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Player data not found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Some error occurred while retrieving players."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "responses": {
+            "201": {
+              "description": "Player created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "example": 5
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "jimbo"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jimbo@jimbo.com"
+                      },
+                      "password": {
+                        "type": "string",
+                        "example": "jimbo123"
+                      },
+                      "experience": {
+                        "type": "integer",
+                        "example": 10
+                      },
+                      "lvl": {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Failed to Create Player",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Some error occurred while creating the Player."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "example": "jimbo"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "jimbo@jimbo.com"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "jimbo123"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/players/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "id of the player",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Get player data by Id success",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "example": 5
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "jimbo"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jimbo@jimbo.com"
+                      },
+                      "password": {
+                        "type": "string",
+                        "example": "jimbo123"
+                      },
+                      "experience": {
+                        "type": "integer",
+                        "example": 10
+                      },
+                      "lvl": {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Player data not found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Some error occurred while retrieving players."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "id of the player",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "202": {
+              "description": "Player data updated",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "example": "jimbo"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jimbo@jimbo.com"
+                      },
+                      "password": {
+                        "type": "string",
+                        "example": "jimbo123"
+                      },
+                      "experience": {
+                        "type": "integer",
+                        "example": 10
+                      },
+                      "lvl": {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Failed to Update Player Data",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Cannot update Player with id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "example": "jimbo"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "jimbo@jimbo.com"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "jimbo123"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "id of the player",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Player data deleted",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "example": "jimbo"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jimbo@jimbo.com"
+                      },
+                      "password": {
+                        "type": "string",
+                        "example": "jimbo123"
+                      },
+                      "experience": {
+                        "type": "integer",
+                        "example": 10
+                      },
+                      "lvl": {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Failed to Delete Player Data",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Could not delete Player with id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/players/exp/{id}": {
+        "post": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "id of the player",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Player has more experience",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "example": 5
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "jimbo"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jimbo@jimbo.com"
+                      },
+                      "password": {
+                        "type": "string",
+                        "example": "jimbo123"
+                      },
+                      "experience": {
+                        "type": "integer",
+                        "example": 10
+                      },
+                      "lvl": {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "experience": {
+                      "type": "integer",
+                      "example": 10
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
