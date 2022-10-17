@@ -37,7 +37,7 @@ const PlayerInput = (props) => {
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Email</span>
-                            <input id='newEmailInputValue' type="text" className="form-control" disabled={true} value={props.searchEmailInputValue} />
+                            <input type="text" className="form-control" disabled={true} value={props.searchEmailInputValue} />
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Exp</span>
@@ -45,7 +45,7 @@ const PlayerInput = (props) => {
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Level</span>
-                            <input id='newPasswordInputValue' onChange={props.inputNewPlayerData} type="text" className="form-control" disabled={true} value={props.searchLevelInputValue}/>
+                            <input onChange={props.inputNewPlayerData} type="text" className="form-control" disabled={true} value={props.searchLevelInputValue}/>
                         </div>
                         {
                             props.isInsert2 === true ? (
