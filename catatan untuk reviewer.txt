@@ -1,3 +1,2 @@
 BE port = 5000
 player-ui port = 8081
-swagger port = 3000/docs
